@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lucia & Marek</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Courier+Prime&display=swap');
+
+    h1, h2 {
+      font-family: 'Courier Prime', monospace;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #FFFFFF;
+      flex-direction: column;
+      justify-content: flex-start;
+      text-align: center;
+      align-items: center;
+      display: flex;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .navbar a {
+      font-size: 25pt;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      color: black;
+    }
+
+    main {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1{
+      font-size: 40pt;
+    }
+
+    .navbar h1 {
+      order: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .info {
+      order: 2;
+    }
+    
+    .dary {
+      order: 3;
+    }
+
+    main, footer {
+      background-color: #174A8D;
+    }
+    
+    main {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+    }
+    
+    @media screen and (min-width: 960px) {
+      .navbar {
+        justify-content: space-evenly;
+        flex-direction: row;
+      }
+      
+      .navbar h1 {
+        order: 2;
+      }
+      
+      .navbar .info {
+        order: 1;
+      }
+      
+      .navbar a {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="info">INFO</a>
+    <h1>Lucia a Marek</h1>
+    <a href="photos.html" class="dary">DARY</a>
+  </nav>
+  
+  <main>
+    <h1>Countdown</h1>
+    <div id="countdown">Prepočítavam</div>
+    
+    <h1>Info</h1>
+    <div id="map"></div>
+  </main>
+
+  <footer>
+    <p>citat</p>
+  </footer>
+
+  <script>
+    // Countdown Timer
+    var countDownDate = new Date("September 2, 2023 15:00:00").getTime();
+
+    var countdown = document.getElementById("countdown");
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+      var countdownElement = document.getElementById("countdown");
+      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+
+      if (distance < 0) {
+        clearInterval(x);
+        countdown.innerHTML = "The wedding day has arrived!";
+      }
+    }, 1000);
+
+    // Google Map
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 48.9976, lng: 21.2406},
+        zoom: 13
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>
