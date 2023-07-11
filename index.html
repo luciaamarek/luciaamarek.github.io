@@ -126,7 +126,7 @@
       <img src="black leaf.svg" alt="Predel - lístok" style="max-height: 10rem; max-width: 7.04rem;">
     </div>
     
-    <h4>Do našej svadby ostáva</h4>
+    <h4 id="pre-countdown-text">Do našej svadby ostáva</h4>
     <h2 id="countdown" style="margin-top: 0; font-size: 3rem;">Prepočítavam</h2>
 
     
@@ -230,6 +230,7 @@
     var countDownDate = new Date("July 11, 2023 14:35:00").getTime();
 
     var countdown = document.getElementById("countdown");
+    var preCountdownText = document.getElementById("pre-countdown-text");
 
     var x = setInterval(function() {
       var now = new Date().getTime();
@@ -247,6 +248,7 @@
       if (distance < 0) {
         clearInterval(x);
         countdown.innerHTML = "Už sa to začalo!";
+        preCountdownText.innerHTML = "";
       }
     }, 1000);
 
