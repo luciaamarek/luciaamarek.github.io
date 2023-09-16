@@ -126,7 +126,8 @@
       <img src="black leaf.svg" alt="Predel - lístok" style="max-height: 10rem; max-width: 7.04rem;">
     </div>
     
-    <h4 id="pre-countdown-text">Do našej svadby ostáva</h4>
+<!--     <h4 id="pre-countdown-text">Do našej svadby ostáva</h4> -->
+    <h4 id="pre-countdown-text">Sme svoji už</h4>
     <h2 id="countdown" style="margin-top: 0; font-size: 3rem;">Prepočítavam</h2>
 
     
@@ -243,13 +244,14 @@
 
 
       var countdownElement = document.getElementById("countdown");
-      countdownElement.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+      // countdownElement.innerHTML = -days + "d " + -hours + "h " + minutes + "m " + seconds + "s";
+      countdownElement.innerHTML = -days + "d ";
 
-      if (distance < 0) {
-        clearInterval(x);
-        countdown.innerHTML = "Už sa to začalo!";
-        preCountdownText.innerHTML = "";
-      }
+      // if (distance < 0) {
+      //   clearInterval(x);
+      //   countdown.innerHTML = "Už sa to začalo!";
+      //   preCountdownText.innerHTML = "";
+      // }
     }, 1000);
 
     // Google Map
