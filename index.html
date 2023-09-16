@@ -127,8 +127,9 @@
     </div>
     
 <!--     <h4 id="pre-countdown-text">Do našej svadby ostáva</h4> -->
-    <h4 id="pre-countdown-text">Sme svoji už</h4>
-    <h2 id="countdown" style="margin-top: 0; font-size: 3rem;">Prepočítavam</h2>
+<!--     <h2 id="countdown" style="margin-top: 0; font-size: 3rem;">Prepočítavam</h2> -->
+    
+    <h4 id="countdown" style="margin-top: 0; font-size: 3rem;">Prepočítavam</h2>
 
     
     <div style="display: flex; justify-content: center; margin-top: 2rem; margin-bottom: 2rem;">
@@ -245,7 +246,7 @@
 
       var countdownElement = document.getElementById("countdown");
       // countdownElement.innerHTML = -days + "d " + -hours + "h " + minutes + "m " + seconds + "s";
-      countdownElement.innerHTML = -days + "d ";
+      countdownElement.innerHTML = "Sme svoji už " + -days+1 + " dní!";
 
       // if (distance < 0) {
       //   clearInterval(x);
